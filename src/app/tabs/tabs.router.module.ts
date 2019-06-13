@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { SignupPage } from '../signup/signup.page';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
             loadChildren: '../tab3/tab3.module#Tab3PageModule'
           }
         ]
+      },
+      {
+        path: 'signup',
+        component: SignupPage
       },
       {
         path: '',

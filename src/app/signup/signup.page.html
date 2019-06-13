@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>signup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>아이디</ion-label>
+    <ion-input type="text" [(ngModel)]="member.omId"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>비밀번호</ion-label>
+    <ion-input type="password" [(ngModel)]="member.omPass"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>닉네임</ion-label>
+    <ion-input type="text" [(ngModel)]="member.omNick"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>메일</ion-label>
+    <ion-input type="email" [(ngModel)]="member.omMail"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>프로필</ion-label>
+    <ion-input type="file" [(ngModel)]="member.omProfileFile"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>전화번호</ion-label>
+    <ion-input type="text" [(ngModel)]="member.omPhone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>생년월일</ion-label>
+    <ion-datetime display-format="YYYYMMDD" [(ngModel)]="member.omBirth"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>성별</ion-label>
+    <ion-select [(ngModel)]="member.omTrans">
+      <ion-select-option value="1">남자</ion-select-option>
+      <ion-select-option value="2">여자</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <!-- <ion-item>
+    <ion-label>우편번호</ion-label>
+    <ion-input type="text" [(ngModel)]="member.omZipcode"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>주소</ion-label>
+    <ion-input type="text" [(ngModel)]="member.omAddr1"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>상세주소</ion-label>
+    <ion-input type="text" [(ngModel)]="member.omAddr2"></ion-input>
+  </ion-item> -->
+  <ion-item>
+    <ion-label>비고</ion-label>
+    <ion-textarea rows="5" [(ngModel)]="member.omInfo"></ion-textarea>
+  </ion-item>
+  <ion-button (click)="doJoin()">Sign-up</ion-button>
+</ion-content>
