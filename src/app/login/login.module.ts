@@ -5,14 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SignupPage } from './signup.page';
-import { HttpClientModule } from '@angular/common/http';
-import { NgDaumAddressModule } from 'ng2-daum-address';
+import { LoginPage } from './login.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: SignupPage
+    component: LoginPage
   }
 ];
 
@@ -21,10 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes),
-    HttpClientModule,
-    NgDaumAddressModule
+    RouterModule.forChild(routes)
   ],
-  declarations: [SignupPage]
+  declarations: [LoginPage]
 })
-export class SignupPageModule {}
+export class LoginPageModule {}

@@ -7,6 +7,7 @@ import { TabsPageRoutingModule } from './tabs.router.module';
 
 import { TabsPage } from './tabs.page';
 import { SignupPageModule } from '../signup/signup.module';
+import { LoginPageModule } from '../login/login.module';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { SignupPageModule } from '../signup/signup.module';
     CommonModule,
     FormsModule,
     TabsPageRoutingModule,
-    SignupPageModule
+    SignupPageModule,
+    LoginPageModule
   ],
   declarations: [TabsPage]
 })
