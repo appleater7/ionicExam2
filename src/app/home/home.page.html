@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-item *ngFor="let member of members">
+      <ion-avatar>
+        <img src="{{baseImgUrl}}{{member.omProfile}}">
+      </ion-avatar>
+      <ion-label>
+        {{member.omNick}}
+      </ion-label>
+      <ion-button (click)="doModify(member.omId)">수정</ion-button>
+      <ion-button color="danger" (click)="doDelete(member.omNo)">삭제</ion-button>
+    </ion-item>
+  
+    
+  </ion-content>
+  

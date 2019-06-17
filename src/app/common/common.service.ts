@@ -41,4 +41,8 @@ export class CommonService {
     }
     return formData;
   }
+  delete(url,param?){//?를 주는것은 옵션파라메터로 선언
+    url = baseUrl + url;
+    return this._http.delete(url);
+  }
 }

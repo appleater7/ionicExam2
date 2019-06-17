@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 import { SignupPage } from '../signup/signup.page';
 import { LoginPage } from '../login/login.page';
+import { HomePage } from '../home/home.page';
 
 const routes: Routes = [
   {
@@ -41,8 +42,16 @@ const routes: Routes = [
         component: SignupPage
       },
       {
+        path: 'signup/:omId',
+        component: SignupPage
+      },
+      {
         path:'login',
         component: LoginPage
+      },
+      {
+        path:'home',
+        component: HomePage
       },
       {
         path: '',

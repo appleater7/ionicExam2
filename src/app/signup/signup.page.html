@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>signup</ion-title>
+    <ion-title>{{btnStr}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -22,6 +22,12 @@
     <ion-label>메일</ion-label>
     <ion-input type="email" [(ngModel)]="member.omMail"></ion-input>
   </ion-item>
+  <ion-item *ngIf="member.omProfile">
+      <ion-label>프사</ion-label>
+      <ion-avatar class="ion-text-left">
+        <img src="{{member.omProfile}}">
+      </ion-avatar>
+    </ion-item>
   <ion-item>
     <ion-label>프로필</ion-label>
     <ion-input type="file" (change)="setFile($event)"></ion-input>
@@ -32,7 +38,8 @@
   </ion-item>
   <ion-item>
     <ion-label>생년월일</ion-label>
-    <ion-datetime display-format="YYYYMMDD" [(ngModel)]="member.omBirth"></ion-datetime>
+    <ion-datetime #dt picker-format="YYYYMMDD" 
+    display-format="YYYYMMDD" [(ngModel)]="member.omBirth"></ion-datetime>
   </ion-item>
   <ion-item>
     <ion-label>성별</ion-label>
@@ -58,5 +65,5 @@
     <ion-label>비고</ion-label>
     <ion-textarea rows="5" [(ngModel)]="member.omInfo"></ion-textarea>
   </ion-item>
-  <ion-button (click)="doJoin()">Sign-up</ion-button>
+  <ion-button (click)="doJoin()">{{btnStr}}</ion-button>
 </ion-content>
