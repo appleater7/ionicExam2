@@ -2,10 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Member } from '../vo/member';
 import { CommonService } from '../common/common.service';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 
-const baseUrl = "http://localhost:89"
+const baseUrl = "http://192.168.0.44:89"
 const httpFile2 = {
   headers : new HttpHeaders(
     {'ENCTYPE':'multipart/form-data'}
@@ -28,7 +28,9 @@ export class SignupPage implements OnInit {
     private _cs:CommonService, 
     private _http:HttpClient, 
     private _route:ActivatedRoute, 
-    private _lc:LoadingController) {
+    private _lc:LoadingController,
+    private _router:Router
+    ) {
       this.option['class'] = 
     'color: #fff;background-color: #0275d8;border-color: #0275d8;';
     }
@@ -47,7 +49,7 @@ export class SignupPage implements OnInit {
         res=>{
           if(res){
             this.member = <Member>res;
-            this.member.omProfile = "http://localhost:89/img/" 
+            this.member.omProfile = "http://192.168.0.44:89/img/" 
             + this.member.omProfile;
           }else{
 
@@ -74,6 +76,7 @@ export class SignupPage implements OnInit {
       this._cs.postFile(url,this.member).subscribe(
         res=>{
           console.log(res);
+          this._router.navigate(['/tabs/home']);
         },
         err=>{
           console.log(err);
@@ -89,6 +92,7 @@ export class SignupPage implements OnInit {
       this._cs.postFile(url,this.member).subscribe(
         res=>{
           console.log(res);
+          this._router.navigate(['/tabs/home']);
         },
         err=>{
           console.log(err);

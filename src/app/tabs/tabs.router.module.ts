@@ -4,6 +4,7 @@ import { TabsPage } from './tabs.page';
 import { SignupPage } from '../signup/signup.page';
 import { LoginPage } from '../login/login.page';
 import { HomePage } from '../home/home.page';
+import { MoviePage } from '../movie/movie.page';
 
 const routes: Routes = [
   {
@@ -54,15 +55,19 @@ const routes: Routes = [
         component: HomePage
       },
       {
+        path:'movie',
+        component: MoviePage
+      },
+      {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/login',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];

@@ -11,7 +11,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class HomePage implements OnInit {
   members:Member[];
-  baseImgUrl:string = 'http://localhost:89/img/';
+  baseImgUrl:string = 'http://192.168.0.44:89/img/';
   constructor(private _cs:CommonService, private _ac:AlertController, private _router:Router) { }
 
   ngOnInit() {

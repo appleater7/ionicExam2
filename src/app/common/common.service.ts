@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-const baseUrl="http://localhost:89";
+const baseUrl="http://192.168.0.44:89";
 const httpJson = { 
   headers : new HttpHeaders(
     {
